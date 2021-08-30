@@ -31,6 +31,7 @@
 	"type": "module",
 	"dependencies": {
 		"cookie": "^0.4.1",
+		"dotenv": "^10.0.0",
 		"string-hash": "^1.1.3",
 		"tedis": "^0.1.12",
 		"uuid": "^3.4.0"
