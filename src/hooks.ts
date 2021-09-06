@@ -23,7 +23,11 @@ export const handle: Handle = async function ({ request, resolve }) {
 			}
 		};
 	}
-	const userSession = JSON.parse((await db.get(cookies.session_id)).toString());
+	const dbRes = await db.get(cookies.session_id);
+	let userSession: { email: string };
+	if (dbRes) {
+		userSession = JSON.parse(dbRes.toString());
+	}
 	if (userSession) {
 		request.locals = {
 			...request.locals,
